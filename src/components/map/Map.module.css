@@ -1,4 +1,5 @@
 .mapWrap { 
-    height: 600px; 
-    width:50vw 
+    height: 100vh; 
+    width:40vw;
+    max-height:100vw;
 }
