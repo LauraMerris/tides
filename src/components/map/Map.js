@@ -3,11 +3,9 @@ import 'leaflet/dist/leaflet.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
 import styles from './Map.module.css';
 import 'leaflet-defaulticon-compatibility';
-import { MapContainer, TileLayer, Marker, Tooltip, Popup} from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Tooltip } from 'react-leaflet';
 
-const Map = ({markers}) => {
-
-   console.log(markers);
+const Map = ({markers, onMarkerSelected}) => {
     
     return (
         <div className={styles.mapWrap}>
@@ -18,7 +16,7 @@ const Map = ({markers}) => {
                 />
                 {markers.map((elem) => {
                     return (
-                        <Marker key={elem.stationReference} position={[elem.lat, elem.long]}>
+                        <Marker key={elem.stationReference} position={[elem.lat, elem.long]} eventHandlers={{click: () => onMarkerSelected(elem.measureID)}}>
                             <Tooltip>
                                 {elem.label}
                             </Tooltip>
