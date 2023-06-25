@@ -1,12 +1,10 @@
 import styles from './StationInfo.module.css';
-const StationInfo = () => {
+const StationInfo = ({label, lat, long}) => {
     return (
         <div className={styles.stationwrapper}>
             <div className={styles.station}>
-                <h2 className={styles.station__name}>Station Name</h2>
-                <p className={styles.station__details}>Latitude: xxxx</p>
-                <p className={styles.station__details}>Longitude: xxxx</p>
-                <p></p>
+                <h2 className={styles.station__name}>{label}</h2>
+                <p className={styles.station__details}><span>Latitude: {lat}</span><span>Longitude: {long}</span></p>
             </div>
         </div>
     )

@@ -3,26 +3,45 @@
 body{
     margin:0;
     color: rgb(11, 64, 80);
+    background:rgb(170, 211, 223);
 }
 
-.main{
-    display:flex;
-}
-
-.stationInfo{
-    /*background-color:rgb(11, 64, 80);*/
-    /*border-left:10px solid rgb(11, 64, 80);*/
-}
 .map{
-    flex:1;
+    z-index:2;
     height:100vh;
+    position: relative;
 }
-.stationInfo{
-    flex:1;
-    padding:2rem;
+.main{
+    position:relative;
+}
+.stationpanel{
+    position:absolute;
+    left: calc(50% - 5rem);
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:5;
+    padding:2rem 2rem 2rem 8rem;
+    background:lemonchiffon;
+    /*background:#fff;*/
+    clip-path: polygon(10rem 0%, 100% 0%, 100% 100%, 0% 100%);
+    animation: 1s 1 normal slidein;
 }
 
-.stationInfo h1{
+@keyframes slidein {
+    from {
+      left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      left: calc(50% - 5rem);
+      width: 100%;
+    }
+  }
+
+
+.stationpanel h1{
     text-align: center;
     font-family:'Rubik', sans-serif;
     font-weight:900;

@@ -3,6 +3,7 @@ import HighchartsReact from 'highcharts-react-official';
 import BrandDark from "highcharts/themes/brand-dark";
 import * as Moment from 'moment';
 import * as mTZ from 'moment-timezone';
+import styles from './chart.module.css';
 
 window.moment = Moment;
 mTZ();
@@ -46,13 +47,12 @@ const Chart = ({data, xLabel, yLabel, title}) => {
         },
         series: [
           {
-            //data: data.map(point => [new Date(point.dateTime).getTime(), point.value])
             data
           }
         ]
       };
     return (
-        <div>
+        <div className={styles.chartwrap}>
             <HighchartsReact highcharts={Highcharts} options={options} />
         </div>
     )

@@ -19,13 +19,12 @@ function App() {
   // using the uri from the measure id instead of the below query string, which is much slower
   //`http://environment.data.gov.uk/flood-monitoring/data/readings?today&stationReference=${ref}`
 
-  // how to get the station info here?
-  // title and station info
+    const station = subStations.find(item => item.measureID === ref);
+    setSelectedStationInfo(station);
    
     fetch(`${ref}/readings?today`)
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       const sorted = data.items.map(item => {
         return [
           new Date(item.dateTime).getTime(), 
@@ -61,16 +60,14 @@ function App() {
   },[])
 
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
+    <div className="app">
       <section className="main">
         <div className="map">
           <Map markers={subStations} onMarkerSelected={markerSelectedHandler} />
         </div>
-        <div className="stationInfo">
+        <div className="stationpanel">
           <h1>TIDAL</h1>
-          <StationInfo />
+          {selectedStationInfo && <StationInfo label={selectedStationInfo.label} lat={selectedStationInfo.lat} long={selectedStationInfo.long} />}
           {selectedStationData.length !== 0 && <Chart data={selectedStationData} xLabel="Time today" yLabel="Local Measurement (m)" title="" />}
         </div>
       </section>
