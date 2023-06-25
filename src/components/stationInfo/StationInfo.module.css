@@ -1,0 +1,18 @@
+.stationwrapper{
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: center;
+    margin:0 0 2rem 0;
+}
+.station__name{
+    font-weight:600;
+    font-size:2rem;
+    font-family:'Rubik', sans-serif;
+    margin:1rem 0 1rem 0;
+}
+
+.station__details{
+    margin:1rem 0;
+    padding:0;
+}

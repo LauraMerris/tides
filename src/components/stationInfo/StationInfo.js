@@ -1,7 +1,13 @@
+import styles from './StationInfo.module.css';
 const StationInfo = () => {
     return (
-        <div>
-            <p>Station info goes here</p>
+        <div className={styles.stationwrapper}>
+            <div className={styles.station}>
+                <h2 className={styles.station__name}>Station Name</h2>
+                <p className={styles.station__details}>Latitude: xxxx</p>
+                <p className={styles.station__details}>Longitude: xxxx</p>
+                <p></p>
+            </div>
         </div>
     )
 }

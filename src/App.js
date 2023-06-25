@@ -1,6 +1,7 @@
 import './App.css';
 import Map from './components/map/Map';
 import { useState, useEffect } from 'react';
+import StationInfo from './components/stationInfo/StationInfo';
 import Chart from './components/Chart/Chart';
 
 function App() {
@@ -25,7 +26,13 @@ function App() {
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      setSelectedStationData(data.items);
+      const sorted = data.items.map(item => {
+        return [
+          new Date(item.dateTime).getTime(), 
+          item.value
+        ]
+      });
+      setSelectedStationData(sorted);
     })
     .catch(e => console.log(e.message));
   }
@@ -62,8 +69,9 @@ function App() {
           <Map markers={subStations} onMarkerSelected={markerSelectedHandler} />
         </div>
         <div className="stationInfo">
-          <h1>Tidal</h1>
-          <Chart data={selectedStationData} title="" />
+          <h1>TIDAL</h1>
+          <StationInfo />
+          {selectedStationData.length !== 0 && <Chart data={selectedStationData} xLabel="Time today" yLabel="Local Measurement (m)" title="" />}
         </div>
       </section>
     </div>
