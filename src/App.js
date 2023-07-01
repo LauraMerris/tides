@@ -3,6 +3,7 @@ import Map from './components/map/Map';
 import { useState, useEffect } from 'react';
 import StationInfo from './components/stationInfo/StationInfo';
 import Chart from './components/Chart/Chart';
+import WaveText from './components/waveText/WaveText';
 
 function App() {
 
@@ -66,7 +67,7 @@ function App() {
           <Map markers={subStations} onMarkerSelected={markerSelectedHandler} />
         </div>
         <div className="stationpanel">
-          <h1>TIDAL</h1>
+          <WaveText phrase="TIDAL" />
           {selectedStationInfo && <StationInfo label={selectedStationInfo.label} lat={selectedStationInfo.lat} long={selectedStationInfo.long} />}
           {selectedStationData.length !== 0 && <Chart data={selectedStationData} xLabel="Time today" yLabel="Local Measurement (m)" title="" />}
         </div>
