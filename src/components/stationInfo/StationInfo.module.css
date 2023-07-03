@@ -1,12 +1,16 @@
 .stationwrapper{
     text-align:center;
     margin:0 0 2rem 0;
+    /*animation: 0.5s ease-out 0s 1 normal forwards running fadeup;*/
+    transform:translate3d(0,0,0);
+    opacity:0;
 }
+
 .station__name{
     font-weight:600;
     font-size:2rem;
     font-family:'Rubik', sans-serif;
-    margin:1rem 0 1rem 0;
+    margin:2rem 0 0 0;
 }
 
 .station__details{
@@ -17,4 +21,11 @@
 }
 .station__details span{
     padding:0 1rem;
+}
+
+@keyframes fadeup {
+    to {
+        transform:translate3d(0,-20px,0);
+        opacity:100%;
+    }
 }

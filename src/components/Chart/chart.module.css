@@ -5,39 +5,15 @@
     border:6px solid rgb(170, 211, 223);
     position:relative;
     outline: 6px solid rgb(199, 170, 223);
+    margin:0 2rem;
 }
-
-/* wiggle */
-
 
 /* Animation property */
 .chartwrap {
-    animation: wiggle 1s linear;
+    animation: 0.5s ease-out 0.25s 1 normal forwards running fadeup;
+    transform:translate3d(0,0,0); 
+    opacity:0;
   }
-  
-  /* Keyframes */
-  /*@keyframes wiggle {
-    0%, 7% {
-      transform: rotateZ(0);
-    }
-    15% {
-      transform: rotateZ(-15deg);
-    }
-    20% {
-      transform: rotateZ(10deg);
-    }
-    25% {
-      transform: rotateZ(-10deg);
-    }
-    30% {
-      transform: rotateZ(6deg);
-    }
-    35% {
-      transform: rotateZ(-4deg);
-    }
-    40%, 100% {
-      transform: rotateZ(0);
-    }*/
 
     @keyframes wiggle {
         0%, 7% {
@@ -53,3 +29,10 @@
           transform: rotateZ(0);
         }
   }
+
+  @keyframes fadeup {
+    to {
+        transform:translate3d(0,-20px,0);
+        opacity:100%;
+    }
+}

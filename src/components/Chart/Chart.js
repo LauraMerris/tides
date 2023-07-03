@@ -1,6 +1,5 @@
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import BrandDark from "highcharts/themes/brand-dark";
 import * as Moment from 'moment';
 import * as mTZ from 'moment-timezone';
 import styles from './chart.module.css';
