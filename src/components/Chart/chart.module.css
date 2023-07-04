@@ -10,7 +10,7 @@
 
 /* Animation property */
 .chartwrap {
-    animation: 0.5s ease-out 0.25s 1 normal forwards running fadeup;
+    animation: 0.5s ease-out 0.5s 1 normal forwards running fadeup;
     transform:translate3d(0,0,0); 
     opacity:0;
   }

@@ -3,11 +3,13 @@ import HighchartsReact from 'highcharts-react-official';
 import * as Moment from 'moment';
 import * as mTZ from 'moment-timezone';
 import styles from './chart.module.css';
+import {useRef, useLayoutEffect} from 'react';
 
 window.moment = Moment;
 mTZ();
 
 const Chart = ({data, xLabel, yLabel, title}) => {
+
    //BrandDark(Highcharts);
     const options = {
         chart: {

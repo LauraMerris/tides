@@ -29,15 +29,13 @@
     margin:0 0 1rem 0;
     font-style: italic;
     position:relative;
-    
-    /*animation: 2s ease-out 1s 1 normal forwards running wave;*/
 }
 
 .letter{
     position:relative;
     display:inline-block;
-    animation: 0.5s ease-in-out calc(1s + 0.2*var(--indexNum)) 1 normal forwards running wave, 
-               0.5s ease-in-out calc(1s + 0.2*var(--indexNum)) 1 normal forwards running fadein;
+    animation: 0.5s ease-in-out calc(1s + 0.1*var(--indexNum)) 1 normal forwards running wave, 
+               0.5s ease-in-out calc(1s + 0.1*var(--indexNum)) 1 normal forwards running fadein;
     opacity:0.1;
 }
 

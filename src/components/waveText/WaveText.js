@@ -7,10 +7,6 @@ const WaveText = ({phrase}) => {
 
     useEffect(() => {
 
-        // if does not prefer reduced motion
-        // split phrase into separate items
-        // apply a class to animate
-
         setLetters(phrase.split(''));
 
     }, []);
