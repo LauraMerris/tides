@@ -2,15 +2,15 @@
     border-radius:1.5rem;
     background:#fff;
     padding:1rem;
-    border:6px solid rgb(170, 211, 223);
+    border:10px solid rgb(170, 211, 223);
     position:relative;
-    outline: 6px solid rgb(199, 170, 223);
+    /*outline: 6px solid rgb(199, 170, 223);*/
     margin:0 2rem;
 }
 
 /* Animation property */
 .chartwrap {
-    animation: 0.5s ease-out 0.5s 1 normal forwards running fadeup;
+    animation: 0.5s ease-out 0.25s 1 normal forwards running fadeup;
     transform:translate3d(0,0,0); 
     opacity:0;
   }

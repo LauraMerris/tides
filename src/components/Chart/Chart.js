@@ -44,6 +44,9 @@ const Chart = ({data, xLabel, yLabel, title}) => {
                       [1, Highcharts.color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
                   ]
               },
+              animation: {
+                defer:500
+              }
           }
         },
         series: [
