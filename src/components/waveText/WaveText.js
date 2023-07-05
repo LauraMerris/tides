@@ -1,4 +1,4 @@
-import styles from './waveText.module.css';
+import styles from './WaveText.module.css';
 import { useEffect, useState } from 'react';
 
 const WaveText = ({phrase}) => {

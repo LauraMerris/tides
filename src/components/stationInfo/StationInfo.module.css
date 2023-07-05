@@ -22,10 +22,3 @@
 .station__details span{
     padding:0 1rem;
 }
-
-@keyframes fadeup {
-    to {
-        transform:translate3d(0,-20px,0);
-        opacity:100%;
-    }
-}

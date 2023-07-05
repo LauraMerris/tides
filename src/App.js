@@ -10,12 +10,10 @@ function App() {
   const [subStations, setSubStations] = useState([]);
   const [selectedStationData, setSelectedStationData] = useState([]);
   const [selectedStationInfo, setSelectedStationInfo] = useState('');
+  const [dataFetched, setDataFetched] = useState(false);
+
 
   const markerSelectedHandler = (ref) => {
-
-    // want to call 
-    // http://environment.data.gov.uk/flood-monitoring/id/stations/E72639?_view=full
-    // how best to get station ID?
 
   // using the uri from the measure id instead of the below query string, which is much slower
   //`http://environment.data.gov.uk/flood-monitoring/data/readings?today&stationReference=${ref}`
@@ -32,7 +30,9 @@ function App() {
           item.value
         ]
       });
+
       setSelectedStationData(sorted);
+      setDataFetched(true);
     })
     .catch(e => console.log(e.message));
   }
@@ -60,6 +60,16 @@ function App() {
     }
   },[])
 
+
+  let stationDataComponent;
+  if (!dataFetched){
+    stationDataComponent = <div className="message fadeupslow"><p>Select a location to see the tide</p></div>
+  } else if (dataFetched && selectedStationData.length === 0){
+    stationDataComponent = <div className="message fadeupfast"><p>Oh no. Couldn't find the tide.</p></div>
+  } else{
+    stationDataComponent = <Chart data={selectedStationData} xLabel="Time today" yLabel="Local Measurement (m)" title="" />
+  }
+
   return (
     <div className="app">
       <section className="main">
@@ -69,7 +79,7 @@ function App() {
         <div className="stationpanel">
           <WaveText phrase="TIDAL" />
           {selectedStationInfo && <StationInfo label={selectedStationInfo.label} lat={selectedStationInfo.lat} long={selectedStationInfo.long} />}
-          {selectedStationData.length !== 0 && <Chart data={selectedStationData} xLabel="Time today" yLabel="Local Measurement (m)" title="" />}
+          {stationDataComponent}
         </div>
       </section>
     </div>

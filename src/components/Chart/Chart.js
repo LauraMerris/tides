@@ -2,8 +2,7 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import * as Moment from 'moment';
 import * as mTZ from 'moment-timezone';
-import styles from './chart.module.css';
-import {useRef, useLayoutEffect} from 'react';
+import styles from './Chart.module.css';
 
 window.moment = Moment;
 mTZ();

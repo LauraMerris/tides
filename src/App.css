@@ -28,6 +28,34 @@ body{
     animation: 1s 1 normal slidein;
 }
 
+.message{
+    position: absolute;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size:1.5rem;
+    top:0;
+    bottom:0;
+    left:5rem;
+    right:0;
+    z-index:5;
+    font-weight:700;
+    font-family:'Rubik', sans-serif;
+    font-weight:900;
+}
+
+.fadeupfast{
+    animation: 0.5s ease-out 0.5s 1 normal forwards running fadeup;
+        transform:translate3d(0,0,0);
+        opacity:0;
+}
+
+.fadeupslow{
+        animation: 0.5s ease-out 2s 1 normal forwards running fadeup;
+        transform:translate3d(0,0,0);
+        opacity:0;
+}
+
 @keyframes slidein {
     from {
       left: 100%;
@@ -36,7 +64,14 @@ body{
     to {
       left: calc(50% - 5rem);
     }
-  }
+}
+
+@keyframes fadeup {
+    to {
+        transform:translate3d(0,-20px,0);
+        opacity:100%;
+    }
+}
 
 
 
