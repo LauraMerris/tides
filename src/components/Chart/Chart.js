@@ -26,7 +26,7 @@ const Chart = ({data, xLabel, yLabel, title}) => {
             title:{
               text:xLabel
             }
-        },
+        },  
         legend: {
           enabled: false
         },
@@ -40,10 +40,11 @@ const Chart = ({data, xLabel, yLabel, title}) => {
               fillColor: {
                   linearGradient: [0, 0, 0, 300],
                   stops: [
-                      [0, Highcharts.getOptions().colors[0]],
-                      [1, Highcharts.color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                      [0, "#aad3df"],
+                      [1, "#fff"]
                   ]
               },
+              color:"#537d8a",
               animation: {
                 defer:500
               }

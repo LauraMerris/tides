@@ -1,8 +1,9 @@
 .chartwrap{
     border-radius:1.5rem;
-    background:#fff;
+    background:linear-gradient(#fff,#fff) padding-box,
+    linear-gradient(45deg, rgb(170, 211, 223),rgb(213, 170, 223)) border-box;
     padding:1rem;
-    border:10px solid rgb(170, 211, 223);
+    border:10px solid transparent;
     position:relative;
     /*outline: 6px solid rgb(199, 170, 223);*/
     margin:0 2rem;
