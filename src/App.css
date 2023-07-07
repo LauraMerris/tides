@@ -26,22 +26,25 @@ body{
     background:lemonchiffon;
     clip-path: polygon(10rem 0%, 100% 0%, 100% 100%, 0% 100%);
     animation: 1s 1 normal slidein;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.stationinfowrap{
+    flex:1 0 0;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    width:100%;
 }
 
 .message{
-    position: absolute;
-    display:flex;
-    align-items: center;
-    justify-content: center;
     font-size:1.5rem;
-    top:0;
-    bottom:0;
-    left:5rem;
-    right:0;
     z-index:5;
-    font-weight:700;
     font-family:'Rubik', sans-serif;
     font-weight:900;
+    height:400px;
 }
 
 .fadeupfast{

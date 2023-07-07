@@ -2,7 +2,7 @@ import './App.css';
 import Map from './components/map/Map';
 import { useState, useEffect } from 'react';
 import StationInfo from './components/stationInfo/StationInfo';
-import Chart from './components/Chart/Chart';
+import Chart from './components/chart/Chart.js';
 import WaveText from './components/waveText/WaveText';
 
 function App() {
@@ -78,8 +78,10 @@ function App() {
         </div>
         <div className="stationpanel">
           <WaveText phrase="TIDAL" />
-          {selectedStationInfo && <StationInfo label={selectedStationInfo.label} lat={selectedStationInfo.lat} long={selectedStationInfo.long} />}
-          {stationDataComponent}
+          <div className="stationinfowrap">
+            {selectedStationInfo && <StationInfo label={selectedStationInfo.label} lat={selectedStationInfo.lat} long={selectedStationInfo.long} />}
+            {stationDataComponent}
+          </div>
         </div>
       </section>
     </div>

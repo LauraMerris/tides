@@ -10,7 +10,7 @@ const StationInfo = ({label, lat, long}) => {
         const animation = [{transform: "translate3d(0,0,0)"},{transform: "translate3d(0,-20px,0)"}];
         const fadein = [{opacity:"0"},{opacity:"100%"}];
         const timing = {
-            duration: 250,
+            duration: 350,
             iterations: 1,
             fill:"forwards"
           };
