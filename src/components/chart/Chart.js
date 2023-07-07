@@ -2,14 +2,12 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import * as Moment from 'moment';
 import * as mTZ from 'moment-timezone';
-import styles from './Chart.module.css';
 
 window.moment = Moment;
 mTZ();
 
 const Chart = ({data, xLabel, yLabel}) => {
 
-   //BrandDark(Highcharts);
     const options = {
         chart: {
           type: 'areaspline'
