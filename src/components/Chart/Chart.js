@@ -7,7 +7,7 @@ import styles from './Chart.module.css';
 window.moment = Moment;
 mTZ();
 
-const Chart = ({data, xLabel, yLabel, title}) => {
+const Chart = ({data, xLabel, yLabel}) => {
 
    //BrandDark(Highcharts);
     const options = {
@@ -15,7 +15,7 @@ const Chart = ({data, xLabel, yLabel, title}) => {
           type: 'areaspline'
         },
         title: {
-          text: title
+          text: ""
         },
         time: {
             timezone: 'Europe/London'
@@ -39,11 +39,11 @@ const Chart = ({data, xLabel, yLabel, title}) => {
               fillColor: {
                   linearGradient: [0, 0, 0, 300],
                   stops: [
-                      [0, "#aad3df"],
+                      [0, "#a8dff0"],
                       [1, "#fff"]
                   ]
               },
-              color:"#537d8a",
+              color:"#42aac9",
               animation: {
                 defer:500
               }
@@ -56,9 +56,7 @@ const Chart = ({data, xLabel, yLabel, title}) => {
         ]
       };
     return (
-        <div className={styles.chartwrap}>
-            <HighchartsReact highcharts={Highcharts} options={options} />
-        </div>
+      <HighchartsReact highcharts={Highcharts} options={options} />
     )
 }
 

@@ -2,8 +2,9 @@
 
 body{
     margin:0;
-    color: rgb(11, 64, 80);
+    color:#25546A;
     background:rgb(170, 211, 223);
+    font-family:'Rubik', sans-serif;
 }
 
 .map{
@@ -39,12 +40,17 @@ body{
     width:100%;
 }
 
+.messagewrap{
+    display:flex;
+    height:400px;
+    align-items: center;
+    justify-content: center;
+}
+
 .message{
-    font-size:1.5rem;
+    font-size:1.25rem;
     z-index:5;
     font-family:'Rubik', sans-serif;
-    font-weight:900;
-    height:400px;
 }
 
 .fadeupfast{
@@ -58,6 +64,22 @@ body{
         transform:translate3d(0,0,0);
         opacity:0;
 }
+
+.chartwrap{
+    border-radius:1.5rem;
+    background:linear-gradient(#fff,#fff) padding-box,
+    linear-gradient(45deg, rgb(170, 211, 223),rgb(66, 169, 201)) border-box;
+    padding:1rem;
+    border:10px solid transparent;
+    position:relative;
+    margin:0 2rem;
+}
+
+.chartwrap {
+    animation: 0.5s ease-out 0.25s 1 normal forwards running fadeup;
+    transform:translate3d(0,0,0); 
+    opacity:0;
+  }
 
 @keyframes slidein {
     from {
@@ -75,6 +97,7 @@ body{
         opacity:100%;
     }
 }
+
 
 
 

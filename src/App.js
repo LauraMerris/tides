@@ -4,19 +4,22 @@ import { useState, useEffect } from 'react';
 import StationInfo from './components/stationInfo/StationInfo';
 import Chart from './components/chart/Chart.js';
 import WaveText from './components/waveText/WaveText';
+import WelcomeMessage from './components/welcomeMessage/WelcomeMessage';
 
 function App() {
 
   const [subStations, setSubStations] = useState([]);
   const [selectedStationData, setSelectedStationData] = useState([]);
   const [selectedStationInfo, setSelectedStationInfo] = useState('');
-  const [dataFetched, setDataFetched] = useState(false);
+  const [locationSelected, setLocationSelected] = useState(false);
 
 
   const markerSelectedHandler = (ref) => {
 
   // using the uri from the measure id instead of the below query string, which is much slower
   //`http://environment.data.gov.uk/flood-monitoring/data/readings?today&stationReference=${ref}`
+
+    setLocationSelected(true);
 
     const station = subStations.find(item => item.measureID === ref);
     setSelectedStationInfo(station);
@@ -32,7 +35,6 @@ function App() {
       });
 
       setSelectedStationData(sorted);
-      setDataFetched(true);
     })
     .catch(e => console.log(e.message));
   }
@@ -60,15 +62,13 @@ function App() {
     }
   },[])
 
-
-  let stationDataComponent;
-  if (!dataFetched){
-    stationDataComponent = <div className="message fadeupslow"><p>Select a location to see the tide</p></div>
-  } else if (dataFetched && selectedStationData.length === 0){
-    stationDataComponent = <div className="message fadeupfast"><p>Oh no. Couldn't find the tide.</p></div>
-  } else{
-    stationDataComponent = <Chart data={selectedStationData} xLabel="Time today" yLabel="Local Measurement (m)" title="" />
-  }
+  let stationDataComponent = 
+    <>
+      {selectedStationInfo ? <StationInfo label={selectedStationInfo.label} lat={selectedStationInfo.lat} long={selectedStationInfo.long} /> : <div>Station not found</div>}
+      {<div className="chartwrap">
+        {selectedStationData.length > 0 ? <Chart data={selectedStationData} xLabel="Time today" yLabel="Local Measurement (m)" /> : <div className="messagewrap fadeupfast"><p className="message">Sorry, we can't get the tides for this location right now.</p></div>}
+      </div>}
+    </>;
 
   return (
     <div className="app">
@@ -79,8 +79,7 @@ function App() {
         <div className="stationpanel">
           <WaveText phrase="TIDAL" />
           <div className="stationinfowrap">
-            {selectedStationInfo && <StationInfo label={selectedStationInfo.label} lat={selectedStationInfo.lat} long={selectedStationInfo.long} />}
-            {stationDataComponent}
+            {locationSelected ? stationDataComponent : <WelcomeMessage />}
           </div>
         </div>
       </section>
