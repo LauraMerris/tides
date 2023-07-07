@@ -1,31 +1,28 @@
 .welcome{
-    height:100%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
     font-size:1.5rem;
-    line-height:1.5;
-    text-align:center;
+    line-height:1;
+    width:50%;
+    margin:auto;
+    position:relative;
+    background: rgb(250, 253, 255);
+    border-radius:50%;
+    outline: 5px solid rgb(237, 232, 189);
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .welcome {
-    animation: 0.5s ease-out 2s 1 normal forwards running fadeup;
-    transform:translate3d(0,0,0); 
-    opacity:0;
-  }
+  animation: 0.5s ease-out 2s 1 normal forwards running fadeup;
+  transform:translate3d(0,0,0); 
+  opacity:0;
+}
 
-  .welcome::before{
-    content:'';
-    display:block;
-    width:25vh;
-    height:25vh;
-    background: rgb(250, 253, 255);
-    border-radius:50%;
-    outline:1px solid  rgb(170, 211, 223);
-    position: absolute;
-    z-index:-1;
-
-  }
+.welcome::before{
+  content:'';
+  display:block;
+  padding-top:100%;
+}
 
   @keyframes fadeup {
     to {

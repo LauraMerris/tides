@@ -47,7 +47,7 @@ function App() {
         // this aborts stale requests if multiple requests are in-flight at once.
         if (active) {
       
-          const subs = data.items.map(({ label, lat, long, stationReference, measures:[ { ['@id']: measureID} ] }) => ({label, lat, long, stationReference, measureID}) );    
+          const subs = data.items.map(({ label, lat, long, stationReference, measures:[ { '@id': measureID} ] }) => ({label, lat, long, stationReference, measureID}) );    
 
           setSubStations(subs);
         }

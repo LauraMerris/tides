@@ -9,7 +9,7 @@ const WaveText = ({phrase}) => {
 
         setLetters(phrase.split(''));
 
-    }, []);
+    }, [phrase]);
 
     return (
         <h1 className={styles.heading}>
