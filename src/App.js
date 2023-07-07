@@ -23,8 +23,10 @@ function App() {
 
     const station = subStations.find(item => item.measureID === ref);
     setSelectedStationInfo(station);
+
+    const stationSecure = ref.replace('http','https');
    
-    fetch(`${ref}/readings?today`)
+    fetch(`${stationSecure}/readings?today`)
     .then(response => response.json())
     .then(data => {
       const sorted = data.items.map(item => {
