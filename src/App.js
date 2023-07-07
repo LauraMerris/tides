@@ -41,7 +41,7 @@ function App() {
 
   useEffect(() => {
     let active = true;
-    fetch("http://environment.data.gov.uk/flood-monitoring/id/stations?type=TideGauge&unitName=m")
+    fetch("https://environment.data.gov.uk/flood-monitoring/id/stations?type=TideGauge&unitName=m")
       .then(response => response.json())
       .then(data => {
         // this aborts stale requests if multiple requests are in-flight at once.
